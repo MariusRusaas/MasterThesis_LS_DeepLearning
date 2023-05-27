@@ -208,6 +208,8 @@ def train_and_eval(epochs, train_loader, val_loader, model, optimizer, loss_fn, 
  
     Returns:
     - loss_train (float):           Loss for this training epoch
+    - loss_val (float):             Loss for this validation epoch
+    - hist_out:                     100-bin histogram counts of image values between 0 and 1 (not used)
     '''
     losses_train = []
     losses_val = []
