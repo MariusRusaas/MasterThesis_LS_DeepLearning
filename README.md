@@ -59,4 +59,4 @@ The scripts in this repository are the training scripts used during this master 
 Contributions to this repository are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. I appreciate your contributions.
 
 ### Contact
-For access to trained models, or comments and input concerning the repository can be directed at: mariusrusaas@gmail.com
+For access to trained models, or comments and input concerning the repository, contact me at: mariusrusaas@gmail.com
