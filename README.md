@@ -25,7 +25,7 @@ The LS_downsampling folder contains MATLAB scripts and functions for k-space dow
 ### Contents
 downsampling_wDCF.m: MATLAB script that demonstrates the usage of the MIRT non-Uniform k-space tool to downsample a full dataset. The paths in this file are local and needs to be changed to be runnable. A copy of MIRT and k-space coordinates in a MAT file is neccessary.\
 downsampling_utils: Folder containing MATLAB functions used during the downsampling, e.g the image squaring, data saving and downsampling functions.\
-test_subj.mat: MATLAB file containing the subject IDs of the test set participants.\
+test_subj.mat: MATLAB file containing the subject IDs of the test set participants.
 
 ## test_set_evaluation
 The test_set_evaluation folder contains MATLAB scripts and files for evaluating the performance of the trained models on a test set of reconstructed images. These scripts calculate various performance metrics to assess the quality of the reconstructed images.
@@ -33,7 +33,7 @@ The test_set_evaluation folder contains MATLAB scripts and files for evaluating 
 ### Contents
 SnR.m: MATLAB function for calculating the signal-to-noise ration in one volume.\
 test_metrics.m / test_metrics_proc.m: MATLAB scripts that calculate the metrics for all the subjects in the test set.\
-test_metrics_proc.mat / test_metrics_unproc.mat: MATLAB files with the calculated metrics for all test set subjects.\
+test_metrics_proc.mat / test_metrics_unproc.mat: MATLAB files with the calculated metrics for all test set subjects.
 
 ### Dependencies
 To run the code in this repository, you will need the following dependencies:
