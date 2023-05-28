@@ -38,14 +38,14 @@ test_metrics_proc.mat / test_metrics_unproc.mat: MATLAB files with the calculate
 ### Dependencies
 To run the code in this repository, you will need the following dependencies:
 
-Python (version 3.9.13)\
-PyTorch (version 1.13.0)\
-pytorch-3dunet (version 1.3.9 - https://github.com/wolny/pytorch-3dunet)\ 
-Pytorch-UNet (https://github.com/milesial/Pytorch-UNet)\
-Nibabel (version 4.0.2)\
-Ray-Tune (version 1.6.0)\
-MATLAB (version 2022b)\
-MIRT (https://web.eecs.umich.edu/~fessler/code/)\
+- Python (version 3.9.13)
+- PyTorch (version 1.13.0)
+- pytorch-3dunet (version 1.3.9 - https://github.com/wolny/pytorch-3dunet)
+- Pytorch-UNet (https://github.com/milesial/Pytorch-UNet)
+- Nibabel (version 4.0.2)
+- Ray-Tune (version 1.6.0)
+- MATLAB (version 2022b)
+- MIRT (https://web.eecs.umich.edu/~fessler/code/)
 The rest of the dependencies can be seen in the environment.yml file. Make sure to install the required dependencies before executing the scripts.
 
 ### Usage
