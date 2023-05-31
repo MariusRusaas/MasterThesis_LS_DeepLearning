@@ -3,49 +3,60 @@
 This repository contains code and utilities for image reconstruction using deep learning models and k-space downsampling using MATLAB scripts. It also includes MATLAB scripts for evaluating the performance of the test set using various metrics.
 
 ## Table of Contents
-- DeepLearning
-- LS_downsampling
-- test_set_evaluation
-- Dependencies
-- Usage
-- Contributing
-- License
+- [DeepLearning](#deeplearning)
+- [LS_downsampling](#ls_downsampling)
+- [test_set_evaluation](#test_set_evaluation)
+- [Dependencies](#dependencies)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
 ## DeepLearning
-The DeepLearning folder contains Jupyter notebook scripts and Python utilities for training 2D-UNet and 3D-UNet models for image reconstruction. These deep learning models are trained using PyTorch. The scripts in this folder provide detailed instructions on how the models are trained and evaluated on data from the Human Connectome Project (HCP).
+The DeepLearning folder contains Jupyter notebook scripts and Python utilities for training 2D-UNet and 3D-UNet models for image reconstruction. These deep learning models are trained using PyTorch. The scripts in this folder demonstrate how the models were trained. Cell outputs are also included
 
 ### Contents
-2D-UNet.ipynb: Jupyter notebook script for training a 2D-UNet model for image reconstruction.
-3D-UNet.ipynb: Jupyter notebook script for training a 3D-UNet model for image reconstruction.
-utils.py: Python utility functions for data preprocessing, model definition, and training/validation/testing.
+dataset_management.py: Dataset classes used for generating the data loaders.\
+2D-UNet: Folder containing the utilities used for training a 2D-UNet model as well as a notebook detailing the training process.\
+3D-UNet: Folder containing the utilities used for training a 3D-UNet model as well as notebooks detailing the training process on both processed and unprocessed data. This folder also contains the RayTune model selection experiment on processedd data. 
 
 ## LS_downsampling
 The LS_downsampling folder contains MATLAB scripts and functions for k-space downsampling of Looping Star image data. These scripts utilize the k-space trajectory of the Looping Star sequence to downsample the fully sampled k-space of HCP data and reconstruct the downsampled k-space samples. The provided MATLAB scripts demonstrate this process.
 
 ### Contents
-downsampling_script.m: MATLAB script that demonstrates the usage of downsampling functions.
-downsampling_functions.m: MATLAB functions for k-space downsampling based on the LS method.
+downsampling_wDCF.m: MATLAB script that demonstrates the usage of the MIRT non-Uniform k-space tool to downsample a full dataset. The paths in this file are local and needs to be changed to be runnable. A copy of MIRT and k-space coordinates in a MAT file is neccessary.\
+downsampling_utils: Folder containing MATLAB functions used during the downsampling, e.g the image squaring, data saving and downsampling functions.\
+test_subj.mat: MATLAB file containing the subject IDs of the test set participants.
 
 ## test_set_evaluation
-The test_set_evaluation folder contains MATLAB scripts and files for evaluating the performance of the trained models on a test set of reconstructed images. These scripts calculate various performance metrics to assess the quality of the reconstructed images. The provided MATLAB scripts guide you through the process of evaluating the test set and generating the performance metrics.
+The test_set_evaluation folder contains MATLAB scripts and files for evaluating the performance of the trained models on a test set of reconstructed images. These scripts calculate various performance metrics to assess the quality of the reconstructed images.
 
 ### Contents
-evaluation_script.m: MATLAB script that demonstrates the evaluation process and computes performance metrics.
-metrics_results.mat: MATLAB file containing the performance metrics results.
+SnR.m: MATLAB function for calculating the signal-to-noise ration in one volume.\
+test_metrics.m / test_metrics_proc.m: MATLAB scripts that calculate the metrics for all the subjects in the test set.\
+test_metrics_proc.mat / test_metrics_unproc.mat: MATLAB files with the calculated metrics for all test set subjects.
 
 ### Dependencies
 To run the code in this repository, you will need the following dependencies:
 
-PyTorch (version X.X.X)
-MATLAB (version X.X)
-Make sure to install the required dependencies before executing the scripts.
+- Python (version 3.9.13)
+- PyTorch (version 1.13.0)
+- pytorch-3dunet (version 1.3.9 - https://github.com/wolny/pytorch-3dunet)
+- Pytorch-UNet (https://github.com/milesial/Pytorch-UNet)
+- Nibabel (version 4.0.2)
+- Ray-Tune (version 1.6.0)
+- MATLAB (version 2022b)
+- MIRT (https://web.eecs.umich.edu/~fessler/code/)
+The rest of the dependencies can be seen in the environment.yml file. Make sure to install the required dependencies before executing the scripts.
 
 ### Usage
-To use the code in this repository, follow these steps:
+The scripts in this repository are the training scripts used during this master thesis. With the dependencies above, all functions and classes should be usable. If you want to use any of them, follow these steps:
 
-- Clone the repository to your local machine.
 - Set up the required dependencies mentioned in the Dependencies section.
-- Navigate to the respective folders (DeepLearning, LS_downsampling, test_set_evaluation) and follow the instructions provided in the individual readme files and script comments.
+- Clone the repository to your local machine.
+- Follow the procedures from the jupyter/MATLAB scripts for a demonstration of how to use the functions
 
 ### Contributing
-Contributions to this repository are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. We appreciate your contributions.
+Contributions to this repository are welcome. If you find any issues or have suggestions for improvements, please open an issue or submit a pull request. I appreciate your contributions.
+
+### Contact
+For access to trained models, or comments and input concerning the repository, contact me at: mariusrusaas@gmail.com
